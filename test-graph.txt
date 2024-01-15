@@ -1,0 +1,54 @@
+---Create---
+
+//Request
+mutation{
+  createUser(createUserData :{
+    email: "test@gmail.com",
+    age: 20,
+    isSubscribed:true
+  } )
+  {
+    userId,
+    email,
+    age,
+    isSubscribed
+  }
+}
+
+//Response
+{
+  "data": {
+    "createUser": {
+      "userId": "d66415ad-b6c1-4377-8831-72d5f0a41d31",
+      "email": "test@gmail.com",
+      "age": 20,
+      "isSubscribed": true
+    }
+  }
+}
+
+
+--GetById--
+
+//Request
+query{
+  getUserById(userId: "d66415ad-b6c1-4377-8831-72d5f0a41d31")
+  {
+    userId,
+    email,
+    age,
+    isSubscribed
+  }
+}
+
+//Response
+{
+  "data": {
+    "getUserById": {
+      "userId": "d66415ad-b6c1-4377-8831-72d5f0a41d31",
+      "email": "test@gmail.com",
+      "age": 20,
+      "isSubscribed": true
+    }
+  }
+}

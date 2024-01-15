@@ -12,14 +12,14 @@ export class UsersResolver {
 
   constructor(private readonly userService: UsersService) { }
 
-  @Query(() => User, { name: 'user', nullable: true })
+  @Query(() => User, { name: 'getUserById', nullable: true })
   getUser(@Args() getUserArgs: GetUserArgs): User {
 
     return this.userService.getUser(getUserArgs);
 
   }
 
-  @Query(() => [User], { name: 'users', nullable: 'items' })
+  @Query(() => [User], { name: 'getAllUsers', nullable: 'items' })
   getUsers(@Args() getUsersArgs: GetUsersArgs): User[] {
 
     return this.userService.getUsers(getUsersArgs);
